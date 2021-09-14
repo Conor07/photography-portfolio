@@ -1,0 +1,11 @@
+MyNotes.txt
+defaultREADME.md
+src/backups
+src/TODO.txt
+
+build
+public/images/images_smaller_file_size_versions/low_resolution_versions_quality_*
+public/images/images_smaller_file_size_versions/original_images_smaller_file_size_versions
+public/images/images_smaller_file_size_versions/old_versions_26_07_2021
+.DS_Store
+node_modules

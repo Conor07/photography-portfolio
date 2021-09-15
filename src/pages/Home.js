@@ -1,13 +1,35 @@
 import React from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useGlobalContext } from "../context";
+import { handlePageLoadAnimation } from "../utils/handlePageLoadAnimation";
 
 const backgroundImageURL = `${process.env.PUBLIC_URL}/images/images_smaller_file_size_versions/tree_trunks.jpg`;
 
+// Wait 3s before adding page-loaded-once class to page container so the animation can occur once on the first render
+const loadedOnceClassAnimationDelay = 3000;
+const pageName = "home";
+
 const Home = () => {
+  const { pagesLoadedOnce, dispatch } = useGlobalContext();
+
+  useEffect(() => {
+    handlePageLoadAnimation(
+      pagesLoadedOnce,
+      pageName,
+      loadedOnceClassAnimationDelay,
+      dispatch
+    );
+  }, [pagesLoadedOnce, dispatch]);
+
   return (
     <div
       id="home-page-container"
-      className="page-container fit-screen-page-container"
+      className={
+        pagesLoadedOnce.includes(pageName)
+          ? "page-container fit-screen-page-container page-loaded-once"
+          : "page-container fit-screen-page-container"
+      }
       data-testid="home-page-container"
     >
       <div id="home-container">

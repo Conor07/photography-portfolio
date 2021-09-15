@@ -34,6 +34,7 @@
   --body-background-colour: rgb(231, 231, 231);
   --page-padding: 1.5rem 1rem 0 1rem;
   --page-container-padding-bottom: 1.5rem;
+  --printer-animation: printerAnimation 1.75s ease 0s 1 normal none;
 }
 
 * {
@@ -106,6 +107,8 @@ code {
   letter-spacing: 2px;
   height: 100%;
   min-height: 100%;
+  animation: var(--printer-animation);
+  animation-name: logoPrinterAnimation;
 }
 
 #logo:link {
@@ -252,6 +255,12 @@ code {
 
 /* Page Container: ----------------------------------- */
 
+/* #photography-page-container { */
+.photography-page-container {
+  animation: var(--printer-animation);
+  animation-name: pagePrinterAnimation;
+}
+
 .page-container {
   background: white;
   margin: 0 auto;
@@ -260,6 +269,8 @@ code {
   max-width: var(--page-max-width);
   box-shadow: 10px 0px 10px 2px #888888, -10px 0px 10px 2px #888888,
     0px 10px 10px 2px #888888;
+  animation: var(--printer-animation);
+  animation-name: pagePrinterAnimation;
 }
 
 .fit-screen-page-container {
@@ -268,6 +279,10 @@ code {
 
 #home-page-container {
   padding-top: 6.5rem;
+}
+
+.page-loaded-once {
+  animation: none;
 }
 
 /* Footer: ----------------------------------- */
@@ -1691,3 +1706,50 @@ code {
     max-width: 90%;
   }
 }
+
+/* ------------------------------------------------------ */
+/* Animations: */
+/* ------------------------------------------------------ */
+
+@keyframes logoPrinterAnimation {
+  from {
+    transform: translateY(-150%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes logoPrinterAnimation {
+  from {
+    transform: translateY(-150%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes pagePrinterAnimation {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes pagePrinterAnimation {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+/* @media screen and (max-width: 950px) {
+} */

@@ -20,6 +20,7 @@ const initialState = {
   activeImage: "",
   mobileViewWidth: 950,
   imagesDirectory: imagesDirectory1,
+  pagesLoadedOnce: [],
 };
 
 const AppProvider = ({ children }) => {

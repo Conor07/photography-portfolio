@@ -56,6 +56,12 @@ const reducer = (state, action) => {
     return { ...state, importantPhotosLoaded: newImportantPhotosLoaded };
   }
 
+  if (action.type === "UPDATE_PAGES_LOADED_ONCE") {
+    const newPagesLoadedOnce = [...state.pagesLoadedOnce, action.payload];
+
+    return { ...state, pagesLoadedOnce: newPagesLoadedOnce };
+  }
+
   throw new Error("No Matching Action Type");
   //   return state;
 };

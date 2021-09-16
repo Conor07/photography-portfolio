@@ -34,6 +34,7 @@
   --body-background-colour: rgb(231, 231, 231);
   --page-padding: 1.5rem 1rem 0 1rem;
   --page-container-padding-bottom: 1.5rem;
+  --printer-animation: printerAnimation 1.75s ease 0s 1 normal none;
 }
 
 * {
@@ -106,6 +107,8 @@ code {
   letter-spacing: 2px;
   height: 100%;
   min-height: 100%;
+  animation: var(--printer-animation);
+  animation-name: logoPrinterAnimation;
 }
 
 #logo:link {
@@ -268,6 +271,15 @@ code {
 
 #home-page-container {
   padding-top: 6.5rem;
+}
+
+.home-page-container {
+  animation: var(--printer-animation);
+  animation-name: pagePrinterAnimation;
+}
+
+.page-loaded-once {
+  animation: none;
 }
 
 /* Footer: ----------------------------------- */
@@ -1689,5 +1701,49 @@ code {
   #contact-me-form {
     width: 90%;
     max-width: 90%;
+  }
+}
+
+/* ------------------------------------------------------ */
+/* Animations: */
+/* ------------------------------------------------------ */
+
+@keyframes logoPrinterAnimation {
+  from {
+    transform: translateY(-150%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes logoPrinterAnimation {
+  from {
+    transform: translateY(-150%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes pagePrinterAnimation {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes pagePrinterAnimation {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0%);
   }
 }

@@ -1,8 +1,8 @@
 import { React, useEffect } from "react";
 import { useGlobalContext } from "../context";
+
 import ActiveImageModal from "../components/ActiveImageModal";
 import PageTitle from "../components/PageTitle";
-
 import ImageGallery from "../components/ImageGallery";
 
 const Photography = () => {
@@ -25,7 +25,11 @@ const Photography = () => {
   }
 
   return (
-    <div className="page-container" data-testid="photography-page-container">
+    <div
+      id="photography-page-container"
+      className="page-container"
+      data-testid="photography-page-container"
+    >
       <div id="photography-container">
         <PageTitle text="photography" />
 

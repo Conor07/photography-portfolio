@@ -255,12 +255,6 @@ code {
 
 /* Page Container: ----------------------------------- */
 
-/* #photography-page-container { */
-.photography-page-container {
-  animation: var(--printer-animation);
-  animation-name: pagePrinterAnimation;
-}
-
 .page-container {
   background: white;
   margin: 0 auto;
@@ -269,8 +263,6 @@ code {
   max-width: var(--page-max-width);
   box-shadow: 10px 0px 10px 2px #888888, -10px 0px 10px 2px #888888,
     0px 10px 10px 2px #888888;
-  animation: var(--printer-animation);
-  animation-name: pagePrinterAnimation;
 }
 
 .fit-screen-page-container {
@@ -279,6 +271,11 @@ code {
 
 #home-page-container {
   padding-top: 6.5rem;
+}
+
+.home-page-container {
+  animation: var(--printer-animation);
+  animation-name: pagePrinterAnimation;
 }
 
 .page-loaded-once {
@@ -1742,14 +1739,11 @@ code {
 }
 
 @-webkit-keyframes pagePrinterAnimation {
-  from {
+  0% {
     transform: translateY(-100%);
   }
 
-  to {
+  100% {
     transform: translateY(0%);
   }
 }
-
-/* @media screen and (max-width: 950px) {
-} */

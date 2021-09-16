@@ -1,36 +1,11 @@
 import React from "react";
-import { useEffect } from "react";
-import { useGlobalContext } from "../context";
-import { handlePageLoadAnimation } from "../utils/handlePageLoadAnimation";
 
 import PageTitle from "../components/PageTitle";
 import FormItem from "../components/FormItem";
 
-// Wait 3s before adding page-loaded-once class to page container so the animation can occur once on the first render
-const loadedOnceClassAnimationDelay = 3000;
-const pageName = "contact-me";
-
 const Contact = () => {
-  const { pagesLoadedOnce, dispatch } = useGlobalContext();
-
-  useEffect(() => {
-    handlePageLoadAnimation(
-      pagesLoadedOnce,
-      pageName,
-      loadedOnceClassAnimationDelay,
-      dispatch
-    );
-  }, [pagesLoadedOnce, dispatch]);
-
   return (
-    <div
-      // className="page-container"
-      className={
-        pagesLoadedOnce.includes(pageName)
-          ? "page-container contact-me-page-container page-loaded-once"
-          : "page-container contact-me-page-container"
-      }
-    >
+    <div className="page-container">
       <div id="contact-me-container">
         <PageTitle text="contact me" />
 

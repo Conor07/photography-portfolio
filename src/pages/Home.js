@@ -27,8 +27,8 @@ const Home = () => {
       id="home-page-container"
       className={
         pagesLoadedOnce.includes(pageName)
-          ? "page-container fit-screen-page-container page-loaded-once"
-          : "page-container fit-screen-page-container"
+          ? "page-container home-page-container fit-screen-page-container page-loaded-once"
+          : "page-container home-page-container fit-screen-page-container"
       }
       data-testid="home-page-container"
     >

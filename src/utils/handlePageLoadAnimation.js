@@ -1,17 +1,15 @@
-import React from "react";
-
 export function handlePageLoadAnimation(
   pagesLoadedOnce,
   pageToCheck,
   loadedOnceClassAnimationDelay,
   dispatch
 ) {
-  setTimeout(() => {
-    if (!pagesLoadedOnce.includes(pageToCheck)) {
+  if (!pagesLoadedOnce.includes(pageToCheck)) {
+    setTimeout(() => {
       dispatch({
         type: "UPDATE_PAGES_LOADED_ONCE",
         payload: pageToCheck,
       });
-    }
-  }, loadedOnceClassAnimationDelay);
+    }, loadedOnceClassAnimationDelay);
+  }
 }
